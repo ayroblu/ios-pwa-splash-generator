@@ -49,6 +49,18 @@ export const manualDevices = {
     hasTouch: true,
     defaultBrowserType: "webkit",
   },
+  "iPad Air 10.9": {
+    userAgent:
+      "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Mobile/15E148 Safari/604.1",
+    viewport: {
+      width: 820,
+      height: 1180,
+    },
+    deviceScaleFactor: 2,
+    isMobile: true,
+    hasTouch: true,
+    defaultBrowserType: "webkit",
+  },
   "iPad Mini 8.3": {
     userAgent:
       "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Mobile/15E148 Safari/604.1",
@@ -138,7 +150,7 @@ const iosDetailsSimple = [
     height: 1366,
     pixelRatio: 2,
     name: "12.9__iPad_Pro",
-    playwrightName: "",
+    playwrightName: "iPad Pro 12.9",
   },
   {
     width: 834,
@@ -152,7 +164,7 @@ const iosDetailsSimple = [
     height: 1180,
     pixelRatio: 2,
     name: "10.9__iPad_Air",
-    playwrightName: "",
+    playwrightName: "iPad Air 10.9",
   },
   {
     width: 810,
@@ -190,16 +202,21 @@ type IosType = {
   orientation: string;
   name: string;
   playwrightName: keyof typeof devices | keyof typeof manualDevices;
+  colorScheme: "light" | "dark";
 };
 export const iosDetailsGenerated = iosDetailsSimple.reduce<IosType[]>(
   (list, details) => {
-    const orientations = ["portrait", "landscape"];
+    const orientations = ["portrait", "landscape"] as const;
+    const colorSchemes = ["light", "dark"] as const;
     for (const orientation of orientations) {
-      list.push({
-        ...details,
-        orientation,
-        name: details.name + `_${orientation}`,
-      });
+      for (const colorScheme of colorSchemes) {
+        list.push({
+          ...details,
+          orientation,
+          name: details.name + `_${orientation}_${colorScheme}`,
+          colorScheme,
+        });
+      }
     }
     return list;
   },
