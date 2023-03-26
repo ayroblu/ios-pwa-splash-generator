@@ -1,0 +1,365 @@
+const iosDetailsSimple = [
+  {
+    width: "430px",
+    height: "932px",
+    pixelRatio: 3,
+    name: "iPhone_14_Pro_Max",
+  },
+  {
+    width: "393px",
+    height: "852px",
+    pixelRatio: 3,
+    name: "iPhone_14_Pro",
+  },
+  {
+    width: "390px",
+    height: "844px",
+    pixelRatio: 3,
+    name: "iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12",
+  },
+  {
+    width: "428px",
+    height: "926px",
+    pixelRatio: 3,
+    name: "iPhone_14_Plus__iPhone_13_Pro_Max__iPhone_12_Pro_Max",
+  },
+  {
+    width: "375px",
+    height: "812px",
+    pixelRatio: 3,
+    name: "iPhone_13_mini__iPhone_12_mini__iPhone_11_Pro__iPhone_XS__iPhone_X",
+  },
+  {
+    width: "414px",
+    height: "736px",
+    pixelRatio: 3,
+    name: "iPhone_8_Plus__iPhone_7_Plus__iPhone_6s_Plus__iPhone_6_Plus",
+  },
+  {
+    width: "320px",
+    height: "568px",
+    pixelRatio: 2,
+    name: "4__iPhone_SE__iPod_touch_5th_generation_and_later",
+  },
+  {
+    width: "414px",
+    height: "896px",
+    pixelRatio: 3,
+    name: "iPhone_11_Pro_Max__iPhone_XS_Max",
+  },
+  {
+    width: "414px",
+    height: "896px",
+    pixelRatio: 2,
+    name: "iPhone_11__iPhone_XR",
+  },
+  {
+    width: "375px",
+    height: "667px",
+    pixelRatio: 2,
+    name: "iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE",
+  },
+  {
+    width: "1024px",
+    height: "1366px",
+    pixelRatio: 2,
+    name: "12.9__iPad_Pro",
+  },
+  {
+    width: "834px",
+    height: "1194px",
+    pixelRatio: 2,
+    name: "11__iPad_Pro__10.5__iPad_Pro",
+  },
+  {
+    width: "820px",
+    height: "1180px",
+    pixelRatio: 2,
+    name: "10.9__iPad_Air",
+  },
+  {
+    width: "810px",
+    height: "1080px",
+    pixelRatio: 2,
+    name: "10.2__iPad",
+  },
+  {
+    width: "834px",
+    height: "1112px",
+    pixelRatio: 2,
+    name: "10.5__iPad_Air",
+  },
+  {
+    width: "768px",
+    height: "1024px",
+    pixelRatio: 2,
+    name: "9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad",
+  },
+  {
+    width: "744px",
+    height: "1133px",
+    pixelRatio: 2,
+    name: "8.3__iPad_Mini",
+  },
+];
+type IosType = {
+  width: string;
+  height: string;
+  pixelRatio: number;
+  orientation: string;
+  name: string;
+};
+export const iosDetailsGenerated = iosDetailsSimple.reduce<IosType[]>(
+  (list, details) => {
+    const orientations = ["portrait", "landscape"];
+    for (const orientation of orientations) {
+      list.push({
+        ...details,
+        orientation,
+        name: details.name + `_${orientation}`,
+      });
+    }
+    return list;
+  },
+  []
+);
+export const iosDetails = [
+  {
+    width: "834px",
+    height: "1112px",
+    pixelRatio: 2,
+    orientation: "landscape",
+    name: "10.5__iPad_Air_landscape.png",
+  },
+  {
+    width: "744px",
+    height: "1133px",
+    pixelRatio: 2,
+    orientation: "portrait",
+    name: "8.3__iPad_Mini_portrait.png",
+  },
+  {
+    width: "414px",
+    height: "896px",
+    pixelRatio: 2,
+    orientation: "landscape",
+    name: "iPhone_11__iPhone_XR_landscape.png",
+  },
+  {
+    width: "375px",
+    height: "812px",
+    pixelRatio: 3,
+    orientation: "landscape",
+    name: "iPhone_13_mini__iPhone_12_mini__iPhone_11_Pro__iPhone_XS__iPhone_X_landscape.png",
+  },
+  {
+    width: "390px",
+    height: "844px",
+    pixelRatio: 3,
+    orientation: "portrait",
+    name: "iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_portrait.png",
+  },
+  {
+    width: "375px",
+    height: "812px",
+    pixelRatio: 3,
+    orientation: "portrait",
+    name: "iPhone_13_mini__iPhone_12_mini__iPhone_11_Pro__iPhone_XS__iPhone_X_portrait.png",
+  },
+  {
+    width: "375px",
+    height: "667px",
+    pixelRatio: 2,
+    orientation: "landscape",
+    name: "iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_landscape.png",
+  },
+  {
+    width: "820px",
+    height: "1180px",
+    pixelRatio: 2,
+    orientation: "landscape",
+    name: "10.9__iPad_Air_landscape.png",
+  },
+  {
+    width: "430px",
+    height: "932px",
+    pixelRatio: 3,
+    orientation: "portrait",
+    name: "iPhone_14_Pro_Max_portrait.png",
+  },
+  {
+    width: "1024px",
+    height: "1366px",
+    pixelRatio: 2,
+    orientation: "portrait",
+    name: "12.9__iPad_Pro_portrait.png",
+  },
+  {
+    width: "834px",
+    height: "1194px",
+    pixelRatio: 2,
+    orientation: "portrait",
+    name: "11__iPad_Pro__10.5__iPad_Pro_portrait.png",
+  },
+  {
+    width: "414px",
+    height: "736px",
+    pixelRatio: 3,
+    orientation: "portrait",
+    name: "iPhone_8_Plus__iPhone_7_Plus__iPhone_6s_Plus__iPhone_6_Plus_portrait.png",
+  },
+  {
+    width: "430px",
+    height: "932px",
+    pixelRatio: 3,
+    orientation: "landscape",
+    name: "iPhone_14_Pro_Max_landscape.png",
+  },
+  {
+    width: "810px",
+    height: "1080px",
+    pixelRatio: 2,
+    orientation: "portrait",
+    name: "10.2__iPad_portrait.png",
+  },
+  {
+    width: "393px",
+    height: "852px",
+    pixelRatio: 3,
+    orientation: "landscape",
+    name: "iPhone_14_Pro_landscape.png",
+  },
+  {
+    width: "834px",
+    height: "1112px",
+    pixelRatio: 2,
+    orientation: "portrait",
+    name: "10.5__iPad_Air_portrait.png",
+  },
+  {
+    width: "768px",
+    height: "1024px",
+    pixelRatio: 2,
+    orientation: "portrait",
+    name: "9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad_portrait.png",
+  },
+  {
+    width: "414px",
+    height: "736px",
+    pixelRatio: 3,
+    orientation: "landscape",
+    name: "iPhone_8_Plus__iPhone_7_Plus__iPhone_6s_Plus__iPhone_6_Plus_landscape.png",
+  },
+  {
+    width: "810px",
+    height: "1080px",
+    pixelRatio: 2,
+    orientation: "landscape",
+    name: "10.2__iPad_landscape.png",
+  },
+  {
+    width: "393px",
+    height: "852px",
+    pixelRatio: 3,
+    orientation: "portrait",
+    name: "iPhone_14_Pro_portrait.png",
+  },
+  {
+    width: "428px",
+    height: "926px",
+    pixelRatio: 3,
+    orientation: "landscape",
+    name: "iPhone_14_Plus__iPhone_13_Pro_Max__iPhone_12_Pro_Max_landscape.png",
+  },
+  {
+    width: "1024px",
+    height: "1366px",
+    pixelRatio: 2,
+    orientation: "landscape",
+    name: "12.9__iPad_Pro_landscape.png",
+  },
+  {
+    width: "320px",
+    height: "568px",
+    pixelRatio: 2,
+    orientation: "portrait",
+    name: "4__iPhone_SE__iPod_touch_5th_generation_and_later_portrait.png",
+  },
+  {
+    width: "834px",
+    height: "1194px",
+    pixelRatio: 2,
+    orientation: "landscape",
+    name: "11__iPad_Pro__10.5__iPad_Pro_landscape.png",
+  },
+  {
+    width: "414px",
+    height: "896px",
+    pixelRatio: 3,
+    orientation: "portrait",
+    name: "iPhone_11_Pro_Max__iPhone_XS_Max_portrait.png",
+  },
+  {
+    width: "428px",
+    height: "926px",
+    pixelRatio: 3,
+    orientation: "portrait",
+    name: "iPhone_14_Plus__iPhone_13_Pro_Max__iPhone_12_Pro_Max_portrait.png",
+  },
+  {
+    width: "414px",
+    height: "896px",
+    pixelRatio: 2,
+    orientation: "portrait",
+    name: "iPhone_11__iPhone_XR_portrait.png",
+  },
+  {
+    width: "390px",
+    height: "844px",
+    pixelRatio: 3,
+    orientation: "landscape",
+    name: "iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_landscape.png",
+  },
+  {
+    width: "375px",
+    height: "667px",
+    pixelRatio: 2,
+    orientation: "portrait",
+    name: "iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_portrait.png",
+  },
+  {
+    width: "744px",
+    height: "1133px",
+    pixelRatio: 2,
+    orientation: "landscape",
+    name: "8.3__iPad_Mini_landscape.png",
+  },
+  {
+    width: "768px",
+    height: "1024px",
+    pixelRatio: 2,
+    orientation: "landscape",
+    name: "9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad_landscape.png",
+  },
+  {
+    width: "320px",
+    height: "568px",
+    pixelRatio: 2,
+    orientation: "landscape",
+    name: "4__iPhone_SE__iPod_touch_5th_generation_and_later_landscape.png",
+  },
+  {
+    width: "820px",
+    height: "1180px",
+    pixelRatio: 2,
+    orientation: "portrait",
+    name: "10.9__iPad_Air_portrait.png",
+  },
+  {
+    width: "414px",
+    height: "896px",
+    pixelRatio: 3,
+    orientation: "landscape",
+    name: "iPhone_11_Pro_Max__iPhone_XS_Max_landscape.png",
+  },
+];
