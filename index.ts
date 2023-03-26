@@ -1,6 +1,6 @@
 import { webkit, devices, BrowserContext } from "playwright";
 import type { Browser } from "playwright";
-import { iosDetailsGenerated, manualDevices } from "./iphone-details";
+import { iosDetailsGenerated, manualDevices } from "./ios-details";
 import path from "path";
 import fs from "fs";
 
