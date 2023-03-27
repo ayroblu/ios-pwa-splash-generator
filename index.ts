@@ -20,6 +20,7 @@ withBrowser(async (browser) => {
     colorScheme,
     playwrightName,
     name,
+    top,
   } of iosDetailsGenerated) {
     const filename = path.join(dir, `${name}.png`);
     if (fs.existsSync(filename)) {
@@ -50,6 +51,15 @@ withBrowser(async (browser) => {
     await emptyRoute(context, /abs.twimg.com/);
     const page = await context.newPage();
     await page.goto(url, { waitUntil: "domcontentloaded" });
+    if (top) {
+      await page.evaluate(
+        (top) =>
+          Object.assign(document.querySelector("#placeholder > svg").style, {
+            top: `${top}px`,
+          }),
+        top
+      );
+    }
     await page.screenshot({
       path: path.join(dir, `${name}.png`),
     });
