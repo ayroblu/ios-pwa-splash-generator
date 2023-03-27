@@ -9,3 +9,7 @@ Note how for twitter.com, it renders a splash screen from the server first, befo
 In the past I have used:
 
 - https://progressier.com/pwa-icons-and-ios-splash-screen-generator
+
+### TODO
+
+I need to consider also the effect of the notch: https://useyourloaf.com/blog/iphone-14-screen-sizes/
