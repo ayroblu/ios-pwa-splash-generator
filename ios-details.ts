@@ -236,7 +236,7 @@ export const iosDetailsGenerated = iosDetailsSimple.reduce<IosType[]>(
     const colorSchemes = ["light", "dark"] as const;
     for (const orientation of orientations) {
       for (const colorScheme of colorSchemes) {
-        if (!hasLandscape || orientation === "landscape") {
+        if (orientation === "portrait" || hasLandscape) {
           list.push({
             ...details,
             orientation,
