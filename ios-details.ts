@@ -1,12 +1,13 @@
 import { devices } from "playwright";
 
+// https://www.webmobilefirst.com/en/devices/
 const iosDetailsSimple = [
   {
     width: 430,
     height: 932,
     pixelRatio: 3,
-    name: "iPhone_14_Pro_Max",
-    playwrightName: "iPhone 14 Pro Max",
+    name: "iPhone_15_Pro_Max__iPhone_15_Plus__iPhone_14_Pro_Max",
+    playwrightName: "iPhone 15 Pro Max",
     top: 59,
     hasLandscape: false,
   },
@@ -14,8 +15,8 @@ const iosDetailsSimple = [
     width: 393,
     height: 852,
     pixelRatio: 3,
-    name: "iPhone_14_Pro",
-    playwrightName: "iPhone 14 Pro",
+    name: "iPhone_15_Pro__iPhone_15__iPhone_14_Pro",
+    playwrightName: "iPhone 15 Pro",
     top: 59,
     hasLandscape: false,
   },
